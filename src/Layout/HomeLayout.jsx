@@ -18,7 +18,7 @@ const HomeLayout = () => {
             <nav className='container  mx-auto'>
                 <Navbar></Navbar>
             </nav>
-            <main className='container mx-auto my-3  flex gap-2'>
+            <main className='container mx-auto my-3  flex gap-4'>
                 <aside className='w-3/12'><LeftAsiede></LeftAsiede></aside>
                 <section className="main w-6/12">
                     <Outlet></Outlet>
