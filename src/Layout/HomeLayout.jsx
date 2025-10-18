@@ -19,11 +19,11 @@ const HomeLayout = () => {
                 <Navbar></Navbar>
             </nav>
             <main className='container mx-auto my-3  flex gap-4'>
-                <aside className='w-3/12'><LeftAsiede></LeftAsiede></aside>
+                <aside className='w-3/12 sticky h-fit top-5'><LeftAsiede></LeftAsiede></aside>
                 <section className="main w-6/12">
                     <Outlet></Outlet>
                 </section>
-                <aside className='w-3/12'><div><RightAside></RightAside></div></aside>
+                <aside className='w-3/12 sticky h-fit top-5'><div><RightAside></RightAside></div></aside>
             </main>
         </div>
     );
