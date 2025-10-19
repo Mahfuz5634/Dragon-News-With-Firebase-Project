@@ -1,10 +1,12 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import AuthContext from '../Provider/AuthContext';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
   const {auth}=use(AuthContext)
+  const location = useLocation();
+  const navigate=useNavigate();
   const handlelogin=(e)=>{
     e.preventDefault();
     const email=e.target.email.value;
@@ -13,6 +15,7 @@ const Login = () => {
     .then(()=>{
       alert("Login Succesfull")
       e.target.reset();
+      navigate(`${location.state? location.state : '/'}`)
     })
     .catch(error=>{
       alert(error);
