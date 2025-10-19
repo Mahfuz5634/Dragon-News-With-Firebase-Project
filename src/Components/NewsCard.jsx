@@ -1,5 +1,6 @@
 import React from "react";
 import { FaEye, FaShareAlt, FaBookmark } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ data }) => {
   return (
@@ -83,7 +84,7 @@ const NewsCard = ({ data }) => {
 
         {/* Action Buttons */}
         <div className="flex justify-between items-center">
-          <button className="btn btn-sm ">Read More</button>
+          <Link to={`/news-details/${data.id}`} className="btn btn-sm ">Read More</Link>
 
           <div className="flex gap-2">
             <button className="btn btn-sm   flex items-center gap-1">

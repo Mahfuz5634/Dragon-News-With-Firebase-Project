@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 const AuthProvider = ({children}) => {
 
     const [User,setUser]=useState(null)
+    const [loading,setloading]=useState(true);
 
     const createUser= (email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
@@ -16,6 +17,7 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unsub=onAuthStateChanged(auth,(curresntUser)=>{
             setUser(curresntUser);
+            setloading(false);
         })
         return ()=>{
             unsub();
@@ -26,6 +28,8 @@ const AuthProvider = ({children}) => {
         setUser,
         createUser,
         auth,
+        loading,
+        setloading,
     }
     return <AuthContext value={authData}>{children}</AuthContext>
     
